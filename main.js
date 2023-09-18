@@ -51,19 +51,26 @@ function consultaClima(){
         nombreUsuario = prompt("Ingresa tu nombre").toUpperCase()
         zonaPais = prompt("¿En qué pais te encuentras?").toUpperCase()
         zonaUsuario = prompt("¿En qué zona vives? P.ej; Norte, Sur, Este, Oeste").toUpperCase()
+        
+        switch(zonaUsuario){
+            case "NORTE":
+                alert(nombreUsuario + ", vistete fresco y mantente hidratado")
+                break
+            case "SUR":
+                alert(nombreUsuario + ", te recomendamos taparte por el frente frío #15 que se avecina")
+                break
+            case "ESTE":
+                alert(nombreUsuario + ", se esperan vientos fuertes y cielos despejados")
+                break
+            case "OESTE":
+                alert(nombreUsuario + ", evita salir a carretera ya que se espera una neblina espesa por las noches")
+                break
+            default:
+                alert("Ingresa una región corecta")
 
-        if(zonaUsuario === "NORTE") {
-            alert(nombreUsuario + ", vistete fresco y mantente hidratado")
-        } else if(zonaUsuario === "SUR"){
-            alert(nombreUsuario + ", te recomendamos taparte por el frente frío #15 que se avecina")
-        } else if(zonaUsuario === "ESTE"){
-            alert(nombreUsuario + ", se esperan vientos fuertes y cielos despejados")
-        } else if(zonaUsuario === "OESTE"){
-            alert(nombreUsuario + ", evita salir a carretera ya que se espera una neblina espesa por las noches")
-        } else (
-            alert("Ingresa una región corecta")
-        )
+                
 
+        }
         pregunta1 = prompt("¿te interesaria saber otro clima?")
 
     } 
@@ -73,3 +80,53 @@ function consultaClima(){
 
 consultaClima()
 
+/*
+const datosClima = [
+    {
+        ciudad: "Buenos Aires",
+        abreviatura:"BS",
+        temperatura: 20,
+        velocidadViento: 150,
+    },
+    {
+        ciudad: "Nueva York",
+        abreviatura:"NY",
+        temperatura: 25,
+        velocidadViento: 120,
+    },
+    {
+        ciudad: "Tokio",
+        abreviatura:"TK",
+        temperatura: 28,
+        velocidadViento: 100,
+    },
+    {
+        ciudad: "Londres",
+        abreviatura:"LD",
+        temperatura: 18,
+        velocidadViento: 80,
+    },
+    {
+        ciudad: "Sídney",
+        abreviatura:"SY",
+        temperatura: 30,
+        velocidadViento: 200,
+    }
+]
+function consultaClima(){
+
+
+    let continuar = confirm("¿Te interesa saber el estado del clima en donde estás?")
+
+    while(continuar){        
+        let nombreUsuario = prompt("Ingresa tu nombre").toUpperCase()
+        let ciudadIngresada = prompt("¿En qué ciudad vives? P.ej; BA,NY,TK,LD,SY").toUpperCase()
+        console.log(ciudadIngresada)
+        let ciudadEncontrada = datosClima.find(dato => dato.abreviatura == ciudadIngresada)
+        alert("Hola!! " + nombreUsuario + " la temperatura en " + ciudadEncontrada.ciudad + " es de " + ciudadEncontrada.temperatura + " grados")
+
+        continuar = confirm("¿Te interesa saber el estado del clima en donde estás?")
+
+    } 
+    alert("Gracias por visitarnos, vuelva pronto")
+    */
